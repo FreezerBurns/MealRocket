@@ -5,7 +5,7 @@ body, html {
 /* The hero image */
 .hero-image {
 /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("galaxy.jpg");
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("mealrocket.PNG");
 
 /* Set a specific height */
 height: 50%;
@@ -28,5 +28,11 @@ color: white;
 }
 
 .nav-wrapper {
-  background-color: blue;
+  background-color:#60AD03;
 }
+
+.brand-logo {
+  height: 65px;
+  width: 300px;
+}
+
