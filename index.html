@@ -2,11 +2,58 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>Meal Rocket</title>
   <link rel="stylesheet" href="style.css" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+<!--jQUERY-->
+<script src="js/jquery-1.11.1.min.js"></script>
+
+<!--SMOOTH SCROLL-->
+<script src="js/css-tricks-smooth-scroll.js"></script>
+
+<!--Nav Function-->
+<script>
+  //CURRENT CLASS
+  $(document).ready(function () {
+      $(window).scroll(function () {
+  
+          var y = $(this).scrollTop();
+      
+          $('nav ul li a').each(function (event) {
+              if (y >= $($(this).attr('href')).offset().top - 90) {
+                  $('nav ul li a').not(this).removeClass('current');
+                  $(this).addClass('current');
+              }
+      
+          });
+  
+      });
+  });
+  </script>
   </head>
-  <body>
+
+  <body class="body">
+    <header id="topHeader">
+    <div id="title">
+    <h1>MEAL ROCKET</h1>
+    </div>
+    
+    <!--Nav Bar Start Here-->
+    <nav id="nav">
+    <h1>NAV</h1>
+    <ul>
+    <li><a href="#home" class="current">HOME</a></li>
+    <li><a href="#about">ABOUT US</a></li>
+    <li><a href="#input">MAKE MY MEAL</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+    </ul> 
+    </nav><!--End Nav-->
+  </header>
+
+
+  <!--BLAST OFF-->
     <div class="hero-image">
       <div class="hero-text">
         <h1>Welcome to a Galaxy of Meal Options</h1>
@@ -15,6 +62,65 @@
       </div>
     </div>
 
+   <!--HOME PAGE-->
+  <section id="home" class="container"></section> 
   
+
+  <!--ABOUT US-->
+  <div class="rowWhite">
+  <section id="about" class="container">
+    <div class="col12 sectiontext fl">
+      <h2>ABOUT US</h2>
+      <p>Meal Rocket explores you to a creative meal ideas</p>
+    </div>
+    <div class="col12 fl"><img src="images/meal-1.jpg" width="500" heigth="450"/>
+      <hr>
+    </div>
+    <div class="clear"></div>
+  </section>
+  </div>
+  
+
+<!--BACKGROUND PHOTO-->
+<div class="bigphoto1">&nbsp;</div>
+
+
+<!--INPUT MAKE ME A MEAL-->
+<div class="rowWhite">
+  <section id="input" class="container">
+    <div class="col33">
+      <h2>MAKE MY MEAL</h2>
+      <p>Making a meal for you. Use our meal rocket tool which is fast and easy to cook an awesome meal.</p>
+    </div><!--END COL33-->
+    
+    
+    <div class="col12 fl"><img src="images/meal-2.png" width="400" height="250"/></div>
+    <!--END COL12-->
+    <div class="col12 fl"><img src="images/meal-3.png" width="400" height="250"/></div>
+    <!--END COL12-->
+    
+    <div class="clear"></div>
+  </section>
+  </div><!--END INPUT MAKE ME A MEAL-->
+  
+  
+  <!--BACKGROUND PHOTO-->
+  <div class="bigphoto2">&nbsp;</div>
+  
+
+<!--CONTACT-->
+<div class="rowWhite">
+  <footer id="contact" class="container">
+    <div class="col33">
+      <h2>CONTACT</h2>
+      <p>133 Youge Street, Toronto ON, M5A 3C4</p>
+      <!-- <a href="#"><i class="fa fa-envelope"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-instagram"></i></a> -->
+      <hr>
+      <p class="copyright">&#169; 2020, Meal Rocket</p>
+    </div>
+    <!--END COL33--> 
+  </footer>
+  </div><!--END FOOTER-->
+
   </body>
 </html>
