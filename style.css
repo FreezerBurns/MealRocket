@@ -125,6 +125,8 @@ h2 {
 		float:left;
 		display:inline;
 		text-align:center;
+		font-size:20px;
+		font-weight: bold; 
 	}
 	
 	#nav li a {
