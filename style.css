@@ -52,6 +52,7 @@ h1 {
 	font-weight:400;
 	font-size:2em;
 	margin-bottom:10px;
+
 }
 
 h2 {
@@ -93,12 +94,17 @@ h2 {
 }
 
 #title {
-	width:500px;
-	height:30px;
+	width:100px;
+	height:75px;
 	line-height:30px;
 	position:fixed;
 	left:10px;
 	top:10px;
+}
+
+#title img{
+	width: 100%;
+	height: auto 	;
 }
 
 #nav {
@@ -231,7 +237,7 @@ hr {
 a.current {
 	
 }
-=======
+
 
 .nav-wrapper {
   background-color:#60AD03;
