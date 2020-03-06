@@ -1,0 +1,245 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body, html {
+  height: 100%;
+} 
+
+body {
+	font-family: 'Muli', sans-serif;
+	font-weight:300;
+	font-size:0.95em;
+	line-height:120%;
+	text-align:justify;
+	color:#000;
+	background-image:url(images/saladbig1.jpg);
+	background-size:cover;
+	background-attachment:fixed;
+}
+
+a {
+	text-decoration:none;
+	color:#000;
+}
+
+/* The hero image */
+.hero-image {
+/* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("mealrocket.PNG");
+
+/* Set a specific height */
+height: 50%;
+
+/* Position and center the image to scale nicely on all screens */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+text-align: center;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+}
+
+/***********************HEADER*/
+h1 {
+	font-weight:400;
+	font-size:2em;
+	margin-bottom:10px;
+}
+
+h2 {
+	font-size:1.5em;
+	line-height:120%;
+	margin-bottom:10px;
+}
+#home {
+	height:100vh;
+}
+#topHeader {
+	background-color:rgba(255,255,255,0.50);
+	height:60px;
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;	
+}
+
+.container {
+	width:960px;
+	margin:0 auto;
+	padding-top:10px;
+}
+
+/*---COLUMN DIMENSIONS---*/
+
+.col33 {width:920px;} /*960*/
+.col13 {width:280px;} /*320*/
+.col23 {width:600px;} /*640*/
+.col12 {width:440px;} /*480*/
+.col14 {width:200px;} /*240*/
+.col15 {width:152px;} /*192*/
+.col16 {width:120px;} /*160*/
+
+.col33, .col13, .col23, .col12, .col12, .col15, .col16 {
+	padding:10px;
+	margin:10px;
+}
+
+#title {
+	width:500px;
+	height:30px;
+	line-height:30px;
+	position:fixed;
+	left:10px;
+	top:10px;
+}
+
+#nav {
+	height:35px;
+	line-height:35px;
+	width:15%;	
+	z-index:10;
+}
+
+	#nav ul {
+		padding:0 10px 10px 10px;
+		position:fixed;
+		top:10px;
+		right:-20px;
+	}
+	
+	#nav li {
+		float:left;
+		display:inline;
+		text-align:center;
+	}
+	
+	#nav li a {
+		display:inline-block;
+		margin-right:20px;
+		color:rgba(116,116,116,1.00);
+		padding: 5px 10px;
+	}
+	
+	#nav li a:hover {
+		color:#6CAD03;
+	}
+	
+	#nav h1 {
+		text-indent:-9999em;
+	}
+
+#home, #about, #input, #contact {
+	padding-top:50px;
+}
+
+#input h3 {
+	text-indent:-99999em;
+	position:absolute;
+	visibility:hidden;
+}
+
+#input img {
+	padding-top:0;
+}
+
+#contact {
+	text-align:center;
+	height:90vh;
+	padding-top:10vh;
+}
+
+	#contact p {
+		margin-bottom:5px;
+	}
+	
+	#contact a {
+		color:rgba(116,116,116,1.00);
+	}
+	
+	#contact a:hover {
+		color:#6CAD03;
+	}
+
+
+hr {
+	border: 0; 
+	height: 0; 
+	width:440px;
+	border-top: 1px solid rgba(0, 0, 0, 0.1); 
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+	#input hr  {
+		width:920px;
+	}
+
+
+/*RESUSABLE CLASSES*/
+
+.sectiontext {
+	margin-top:200px;
+}
+
+.copyright {
+	font-size:0.8em;
+	color:rgba(182,182,182,1.00);
+}
+
+.bigphoto1 {
+	background-image:url(images/mainbig2.jpg);
+	background-position:top center;
+	background-attachment:fixed;
+	background-size:cover;
+	height:500px;
+	-webkit-box-shadow:inset 0 0 6px 0 rgba(3,3,3,0.5);
+	box-shadow:inset 0 0 6px 0 rgba(3,3,3,0.5);
+}
+
+.bigphoto2 {
+	background-image:url(images/dessertbig3.jpg);
+	background-position:top center;
+	background-attachment:fixed;
+	background-size:cover;
+	height:500px;
+	-webkit-box-shadow:inset 0 0 6px 0 rgba(3,3,3,0.5);
+	box-shadow:inset 0 0 6px 0 rgba(3,3,3,0.5);
+}
+
+/*WHITE ROW FOR ABOUT*/
+.rowWhite {
+	background:#FFF;
+}
+
+/* FLOATS AND CLEARS */
+.fl {float:left;}
+.fr {float:right;}
+.clear {clear:both;}
+
+.current {
+	background:rgba(164,162,149,0.2);
+	color:#6CAD03!important;
+	outline:none;
+}
+a.current {
+	
+}
+=======
+
+.nav-wrapper {
+  background-color:#60AD03;
+}
+
+.brand-logo {
+  height: 65px;
+  width: 300px;
+}
+
+
