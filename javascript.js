@@ -89,6 +89,10 @@ var calorieRange ="500-1000";
 $(".submit-class").on("click", function(e) {
     var q = $("#form-food").val();
     getFood(q);
-    
+})
+   
+$(".submit-class").on("click", function(e){
+    $(".posted-food").empty();
+})   
 
-});
+
