@@ -1,24 +1,27 @@
 // variables for the API call
-var q = "chicken"
-var calorieRange ="500-1000"
+var q = $("#form-food").val();
+var calorieRange ="500-1000";
 
 
     
 var queryURL = "https://api.edamam.com/search?q=" + q + "&app_id=f227cdd3&app_key=32526e4e0bff2ed8f7e09004de391df7&from=0&to=1&calories=" + calorieRange;
 
-$.ajax({
-url: queryURL,
-method: "GET"
-})
 
-.then(function(response) {
+    function getFood(){
 
-    //global variable for API object response
-    var foodHits = response.hits;
+        $.ajax({
+        url: queryURL,
+        method: "GET"
+        })
+
+        .then(function(response) {
+
+        //global variable for API object response
+        var foodHits = response.hits;
 
     
-    // looping through the recipes on the object
-    for (var index = 0; index < foodHits.length; index ++) {
+        // looping through the recipes on the object
+        for (var index = 0; index < foodHits.length; index ++) {
 
         // variables for each attribute of the receipe
         var recipeName = $("<h3>").text(foodHits[index].recipe.label);
@@ -41,7 +44,7 @@ method: "GET"
         var listUL = $("<ul>");
         for (var i = 0; i < ingredients.length; i++) {
             listUL.append($("<li>").text(ingredients[i]))
-       }
+        }
 
         // link variable/object URL page with complete instructions - opens in new tab
         var foodURL = foodHits[index].recipe.url;
@@ -70,11 +73,16 @@ method: "GET"
         // div located on chicken.html file for testing
         $("#posted-food").append(recipeAll);
 
-
         
-   
     }
     
     
     
-})
+    
+})}
+
+
+// function for submit button
+$(".submit-class").on("click", function() {
+    getFood("q");
+});
