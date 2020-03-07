@@ -68,7 +68,7 @@ h2 {
 	height:100px;
 	position:fixed;
 	left:0;
-	top:0;
+	top:0;	
 	width:100%;	
 }
 
@@ -241,13 +241,33 @@ a.current {
 }
 
 
-.nav-wrapper {
+.input-field {
   background-color:#60AD03;
+  height: 50px;
 }
 
+.label-icon {
+	background-image:src="images/searchicon.png";
+}
 .brand-logo {
   height: 65px;
   width: 300px;
 }
 
+/**************************MAKE MY MEAL PAGE CLASSES*/
+#form-food {
 
+}
+
+.submit-class {
+
+}
+
+.posted-food {
+background-color: #FFF;
+text-align: center;
+position: inherit;
+/* display: inline-block; */
+margin: 60px 30px 20px 60px; 
+
+}
