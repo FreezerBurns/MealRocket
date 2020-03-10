@@ -9,7 +9,7 @@ var to = 5
 
 function getFood(foodSearch) {
 
-    var queryURL = "https://api.edamam.com/search?q=" + foodSearch + "&app_id=f0c25d74&app_key=66ff721ddf2c581a5d5b0fdc2898fbcb&from=" + from + "&to=" + to + "&calories=" + calorieRange;
+    var queryURL = "https://api.edamam.com/search?q=" + foodSearch + "&app_id=e24cb921&app_key=378bda3e9001f3259500ebfd83491004&from=" + from + "&to=" + to + "&calories=" + calorieRange;
 
     $.ajax({
             url: queryURL,
@@ -20,7 +20,7 @@ function getFood(foodSearch) {
 
             //global variable for API object response
             var foodHits = response.hits;
-            console.log(foodHits);
+            
 
 
 
@@ -32,17 +32,30 @@ function getFood(foodSearch) {
 
                 // variables for each attribute of the receipe
                 var recipeName = $("<h3>").text(foodHits[from].recipe.label);
+                $(".recipe-name").append(recipeName);
+
                 var ingredients = foodHits[from].recipe.ingredientLines;
+                $(".ingredients-list").append(listUL);
+
                 var labelHealth = $("<h4>").text(foodHits[from].recipe.healthLabels);
+                $(".health-label").append(labelHealth);
+
                 var labelDiet = $("<h4>").text(foodHits[from].recipe.dietLabels);
+                $(".diet-label").append(labelDiet)
+
                 var imagePic = $("<img>").attr("src", foodHits[from].recipe.image);
+                $(".food-image").append(imagePic);
 
                 // calories and per serving
                 var servings = foodHits[from].recipe.yield
                 var calorieTotal = foodHits[from].recipe.calories;
                 perServing = calorieTotal / servings;
+
                 var calServing = $("<h4>").append(perServing);
+                $(".serving-calories").append(calServing);
+
                 var servingPerPerson = $("<h4>").append(servings);
+                $(".total-servings").append(servingPerPerson);
 
 
 
@@ -60,6 +73,7 @@ function getFood(foodSearch) {
                     target: "_blank"
                 })
                 linkButton.text("Click here for full recipe!");
+                $("link-button").append(linkButton, "<p>");
 
 
 
@@ -93,7 +107,7 @@ function getFood(foodSearch) {
 
 // function for submit button
 $(".submit-class").on("click", function (e) {
-    var q = $("#form-food").val();
+    var q = $("#search").val();
     getFood(q);
 })
 
@@ -102,7 +116,7 @@ $(".submit-class").on("click", function (e) {
 })
 
 $(".next-class").on("click", function (e) {
-    var q = $("#form-food").val();
+    var q = $("#search").val();
     from++;
     to++;
     // from = from < 4 ? from++ : 0;
@@ -113,7 +127,7 @@ $(".next-class").on("click", function (e) {
 })
 
 $(".back-class").on("click", function (e) {
-    var q = $("#form-food").val();
+    var q = $("#search").val();
     from--;
     to--;
     // from = from < 4 ? from++ : 0;
