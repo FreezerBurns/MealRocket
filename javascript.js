@@ -12,8 +12,14 @@ function getFood(foodSearch) {
     var queryURL = "https://api.edamam.com/search?q=" + foodSearch + "&app_id=e24cb921&app_key=378bda3e9001f3259500ebfd83491004&from=" + from + "&to=" + to + "&calories=" + calorieRange;
 
     $.ajax({
-            url: queryURL,
-            method: "GET"
+        url: queryURL,
+        method: "GET",
+        beforeSend: function(){
+            $(".preloader").css("visibility", "visible")
+        },
+        complete: function (){
+            $(".preloader").css("visibility", "hidden")
+        }
         })
 
         .then(function (response) {
