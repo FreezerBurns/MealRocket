@@ -20,7 +20,7 @@ function getFood(foodSearch) {
 
             //global variable for API object response
             var foodHits = response.hits;
-            console.log(foodHits);
+            
 
 
 
