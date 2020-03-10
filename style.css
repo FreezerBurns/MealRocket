@@ -271,3 +271,15 @@ position: inherit;
 margin: 60px 30px 20px 60px; 
 
 }
+.recipe {
+	display: flex;
+	justify-content: center;
+}
+.back-class {
+	position: absolute;
+	top:75%;
+}
+.next-class {
+	position: absolute;
+	top:75%;
+}
