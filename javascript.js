@@ -120,6 +120,8 @@ $("#submit-class").on("click", function (e) {
 
 $("#submit-class").on("click", function (e) {
     event.preventDefault();
+    $("#back-class").css("visibility", "visible");
+    $("#next-class").css("visibility", "visible");
     $(".posted-food").empty();
 })
 
