@@ -12,8 +12,14 @@ function getFood(foodSearch) {
     var queryURL = "https://api.edamam.com/search?q=" + foodSearch + "&app_id=e24cb921&app_key=378bda3e9001f3259500ebfd83491004&from=" + from + "&to=" + to + "&calories=" + calorieRange;
 
     $.ajax({
-            url: queryURL,
-            method: "GET"
+        url: queryURL,
+        method: "GET",
+        beforeSend: function(){
+            $(".preloader").css("visibility", "visible")
+        },
+        complete: function (){
+            $(".preloader").css("visibility", "hidden")
+        }
         })
 
         .then(function (response) {
@@ -37,10 +43,10 @@ function getFood(foodSearch) {
                 var ingredients = foodHits[from].recipe.ingredientLines;
                 $(".ingredients-list").append(listUL);
 
-                var labelHealth = $("<h4>").text(foodHits[from].recipe.healthLabels);
+                var labelHealth = $("<h6>").text(foodHits[from].recipe.healthLabels);
                 $(".health-label").append(labelHealth);
 
-                var labelDiet = $("<h4>").text(foodHits[from].recipe.dietLabels);
+                var labelDiet = $("<h6>").text(foodHits[from].recipe.dietLabels);
                 $(".diet-label").append(labelDiet)
 
                 var imagePic = $("<img>").attr("src", foodHits[from].recipe.image);
@@ -51,10 +57,10 @@ function getFood(foodSearch) {
                 var calorieTotal = foodHits[from].recipe.calories;
                 perServing = calorieTotal / servings;
 
-                var calServing = $("<h4>").append(perServing);
+                var calServing = $("<h6>").append(perServing);
                 $(".serving-calories").append(calServing);
 
-                var servingPerPerson = $("<h4>").append(servings);
+                var servingPerPerson = $("<h6>").append(servings);
                 $(".total-servings").append(servingPerPerson);
 
 
@@ -106,16 +112,20 @@ function getFood(foodSearch) {
 
 
 // function for submit button
-$(".submit-class").on("click", function (e) {
+$("#submit-class").on("click", function (e) {
+    event.preventDefault();
     var q = $("#search").val();
     getFood(q);
 })
 
-$(".submit-class").on("click", function (e) {
+$("#submit-class").on("click", function (e) {
+    event.preventDefault();
+    $("#back-class").css("visibility", "visible");
+    $("#next-class").css("visibility", "visible");
     $(".posted-food").empty();
 })
 
-$(".next-class").on("click", function (e) {
+$("#next-class").on("click", function (e) {
     var q = $("#search").val();
     from++;
     to++;
@@ -126,7 +136,7 @@ $(".next-class").on("click", function (e) {
     getFood(q);
 })
 
-$(".back-class").on("click", function (e) {
+$("#back-class").on("click", function (e) {
     var q = $("#search").val();
     from--;
     to--;

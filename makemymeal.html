@@ -10,7 +10,7 @@
 <!--MATERIALIZE STYLE-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
-
+<header id="topheader"></header>
 <!--Nav Bar Start Here-->
 <nav id="nav">
     <h1>NAV</h1>
@@ -27,6 +27,7 @@
 </head>
 
 <body>
+  <div class="preloader"></div>
 <!--Search Bar-->
 <!-- <div class="nav-wrapper">
   <form>
@@ -45,14 +46,15 @@
     <div class="nav-wrapper">
       <form>
         <div class="input-field">
-          <input id="search" type="search" required>
+          <input id="search" type="search" required> 
           <label class="label-icon" for="search"><i class="material-icons"></i></label>
           <i class="material-icons"></i>
         </div>
       </form>
     </div>
-    <input type="button" value="You Hungry? Lets Cook!" class="submit-class">
-  </div>
+    <button class="btn waves-effect waves-light" id="submit-class" type="submit" name="action">You Hungry? Lets Cook!<i class="material-icons right"></i>
+      </button>
+    </div>
   </div>
   <div class="col s12 m4 l2">&nbsp;</div>
 </div>
@@ -64,10 +66,10 @@
        
  
   <div class="row recipe">
-    <div class="col-sm   2"><input type ="button" value="back" class="back-class"></div>
+    <div class="col-sm   2"><input type ="button" value="back" id="back-class" class="btn-floating btn-large waves-effect waves-light"></div>
     <div class="col-sm   8"> <div id="posted-food" class="posted-food"></div>
     </div>
-    <div class="col-sm   2"><input type ="button" value="next" class="next-class"></div>
+    <div class="col-sm   2"><input type ="button" value="next" id="next-class" class="btn-floating btn-large waves-effect waves-light"></div>
   </div>
 
 

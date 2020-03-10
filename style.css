@@ -12,7 +12,7 @@ body {
 	line-height:120%;
 	text-align:justify;
 	color:#000;
-	background-image:url(images/saladbig1.jpg);
+	background-image:url(images/mainbig2.jpg);
 	background-size:cover;
 	background-attachment:fixed;
 }
@@ -67,6 +67,7 @@ h2 {
 	background-color:rgba(255,255,255,0.50);
 	height:100px;
 	position:fixed;
+	overflow: hidden;
 	left:0;
 	top:0;	
 	width:100%;	
@@ -97,9 +98,10 @@ h2 {
 	width:100px;
 	height:75px;
 	line-height:30px;
-	position:fixed;
-	left:10px;
-	top:10px;
+	position: fixed;;
+	left:0px;
+	top:0px;
+	
 }
 
 #title img{
@@ -111,7 +113,9 @@ h2 {
 	height:35px;
 	line-height:35px;
 	width:15%;	
-	z-index:10;
+	z-index: inherit 100%;;
+	overflow: hidden;
+	background-color: black;
 }
 
 	#nav ul {
@@ -242,7 +246,7 @@ a.current {
 
 
 .input-field {
-  background-color:#60AD03;
+  background-color: white;
   height: 50px;
 }
 
@@ -259,7 +263,8 @@ a.current {
 
 }
 
-.submit-class {
+#submit-class {
+	background-color: #6CAD03;
 
 }
 
@@ -275,11 +280,32 @@ margin: 60px 30px 20px 60px;
 	display: flex;
 	justify-content: center;
 }
-.back-class {
+#back-class {
+	visibility: hidden;
 	position: absolute;
 	top:75%;
+	background-color: #6CAD03;
 }
-.next-class {
+#next-class {
+	visibility: hidden	;
 	position: absolute;
 	top:75%;
+	background-color: #6CAD03;
 }
+.preloader {
+	visibility: hidden;
+	border: 16px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 16px solid #6CAD03;
+	width: 120px;
+	height: 120px;
+	-webkit-animation: spin 2s linear infinite; /* Safari */
+	animation: spin 2s linear infinite;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  @keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+  }
