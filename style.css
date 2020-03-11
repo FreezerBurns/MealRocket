@@ -130,11 +130,12 @@ h2 {
 	}
 	
 	#nav li {
-		float:left;
+		
 		display:inline;
 		text-align:center;
 		font-size:20px;
 		font-weight: bold; 
+		font-family: 'Poppins';
 	}
 	
 	#nav li a {
@@ -252,6 +253,7 @@ a.current {
 .input-field {
   background-color: white;
   height: 50px;
+  border-radius: 5px;
 }
 
 .label-icon {
@@ -269,12 +271,15 @@ a.current {
 
 #submit-class {
 	background-color: #6CAD03;
+	border-radius: 5px;
 }
 #again-class {
 	background-color: #6CAD03;
+	border-radius: 5px;
 }
 #cocktail-class {
 	background-color: #6CAD03;
+	border-radius: 5px;
 	
 }
 
