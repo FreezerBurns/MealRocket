@@ -10,6 +10,13 @@
 <!--MATERIALIZE STYLE-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
+
+    <!-- Slick Carousel Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha256-3h45mwconzsKjTUULjY+EoEkoRhXcOIU4l5YAw2tSOU=" crossorigin="anonymous" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    
 <header id="topheader"></header>
 <!--Nav Bar Start Here-->
 <nav id="nav">
@@ -45,6 +52,8 @@
   <div class="col s12 m4 l8"> 
     <div class="nav-wrapper">
       <form>
+        <br><br>
+        <p class="word"><strong>Browse recipes by ingredients like chicken, beef and chocolate, and search for seasonal favorites like asparagus, pumpkin, strawberries, tomatoes and more.</strong></p>
         <div class="input-field">
           <input id="search" type="search" required> 
           <label class="label-icon" for="search"><i class="material-icons"></i></label>
@@ -66,11 +75,13 @@
        
  
   <div class="row recipe">
-    <div class="col-sm   2"><input type ="button" value="back" id="back-class" class="btn-floating btn-large waves-effect waves-light"></div>
+    <div class="col-sm   2"><input type ="button" value="back" id="back-class" class="btn-floating btn-large waves-effect waves-light slick-prev"></div>
     <div class="col-sm   8"> <div id="posted-food" class="posted-food"></div>
     </div>
-    <div class="col-sm   2"><input type ="button" value="next" id="next-class" class="btn-floating btn-large waves-effect waves-light"></div>
+    <div class="col-sm   2"><input type ="button" value="next" id="next-class" class="btn-floating btn-large waves-effect waves-light slick-next"></div>
   </div>
+
+  
 
 
   <!-- <div>
@@ -99,6 +110,7 @@
 
 </footer> 
 <!--FOOTER ENDS HERE--> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js" integrity="sha256-zUQGihTEkA4nkrgfbbAM1f3pxvnWiznBND+TuJoUv3M=" crossorigin="anonymous"></script>
 <script src="./javascript.js"></script>
 </body>
 </html>

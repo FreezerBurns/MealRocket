@@ -15,6 +15,7 @@ body {
 	background-image:url(images/mainbig2.jpg);
 	background-size:cover;
 	background-attachment:fixed;
+	
 }
 
 a {
@@ -64,7 +65,7 @@ h2 {
 	height:100vh;
 }
 #topHeader {
-	background-color:rgba(255,255,255,0.50);
+	background-color: black;
 	height:100px;
 	position:fixed;
 	overflow: hidden;
@@ -105,7 +106,10 @@ h2 {
 }
 
 #title img{
-	width: 220px;
+	border-radius: 3px;
+	margin-left: 20px;
+	margin-top: 20px;
+	width: 200px;
 	height: 60px;
 }
 
@@ -269,12 +273,18 @@ a.current {
 }
 
 .posted-food {
-background-color: #FFF;
+background-color: rgba(255, 255, 255, 0.7);
 text-align: center;
 position: inherit;
 /* display: inline-block; */
 margin: 60px 30px 20px 60px; 
 
+
+
+}
+
+#posted-food {
+	width: 50vw;
 }
 .recipe {
 	display: flex;

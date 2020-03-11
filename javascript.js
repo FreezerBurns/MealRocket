@@ -26,79 +26,137 @@ function getFood(foodSearch) {
 
             //global variable for API object response
             var foodHits = response.hits;
-            
+            // console.log(foodHits);
 
+            foodHits.map(itemRecipe => {
+                 // variables for each attribute of the receipe
+                 var recipeName = $("<h3>").text(itemRecipe.recipe.label);
+                 $(".recipe-name").append(recipeName);
+ 
+                 var ingredients = itemRecipe.recipe.ingredientLines;
+                 $(".ingredients-list").append(listUL);
+ 
+                 var labelHealth = $("<h6>").text(itemRecipe.recipe.healthLabels);
+                 $(".health-label").append(labelHealth);
+ 
+                 var labelDiet = $("<h6>").text(itemRecipe.recipe.dietLabels);
+                 $(".diet-label").append(labelDiet)
+ 
+                 var imagePic = $("<img>").attr("src", itemRecipe.recipe.image);
+                 $(".food-image").append(imagePic);
+ 
+                 // calories and per serving
+                 var servings = itemRecipe.recipe.yield
+                 var calorieTotal = itemRecipe.recipe.calories;
+                 perServing = calorieTotal / servings;
+ 
+                 var calServing = $("<h6>").append(perServing);
+                 $(".serving-calories").append(calServing);
+ 
+                 var servingPerPerson = $("<h6>").append(servings);
+                 $(".total-servings").append(servingPerPerson);
+ 
+ 
+ 
+ 
+                 // looping through the ingredients list and formatting into an unordered list
+                 var listUL = $("<ul>");
+                 for (var i = 0; i < ingredients.length; i++) {
+                     listUL.append($("<li>").text(ingredients[i]))
+                 }
+ 
+                 // link variable/object URL page with complete instructions - opens in new tab
+                 var foodURL = itemRecipe.recipe.url;
+                 var linkButton = $("<a>").attr({
+                     href: foodURL,
+                     target: "_blank"
+                 })
+                 linkButton.text("Click here for full recipe!");
+                 $("link-button").append(linkButton, "<p>");
+ 
+ 
+ 
+                 // variable div to append all the recipe variables with stored API object data
+                 var recipeAll = $("<div>");
+ 
+                 // all variables appended to Div variable above
+                 recipeAll.append(recipeName); // Recipe title
+                 recipeAll.append(listUL); // Ingredient list in list form
+                 recipeAll.prepend(imagePic); // Image
+                 recipeAll.append(labelHealth); // Health restrictions 
+                 recipeAll.append(labelDiet); // Diet info - aka Low-carb
+                 recipeAll.append(calServing); // Calories per serving
+                 recipeAll.append(servingPerPerson); // Number of servings from the recipe
+                 recipeAll.append(linkButton, "<p>"); // Link to full recipe
+                 $(".posted-food").append(recipeAll);
+               
 
+            })
 
-
-            // looping through the recipes on the object
-            // for (var index = 0; index < foodHits.length; index++) {
                 
+                // // variables for each attribute of the receipe
+                // var recipeName = $("<h3>").text(foodHits[from].recipe.label);
+                // $(".recipe-name").append(recipeName);
 
+                // var ingredients = foodHits[from].recipe.ingredientLines;
+                // $(".ingredients-list").append(listUL);
 
-                // variables for each attribute of the receipe
-                var recipeName = $("<h3>").text(foodHits[from].recipe.label);
-                $(".recipe-name").append(recipeName);
+                // var labelHealth = $("<h6>").text(foodHits[from].recipe.healthLabels);
+                // $(".health-label").append(labelHealth);
 
-                var ingredients = foodHits[from].recipe.ingredientLines;
-                $(".ingredients-list").append(listUL);
+                // var labelDiet = $("<h6>").text(foodHits[from].recipe.dietLabels);
+                // $(".diet-label").append(labelDiet)
 
-                var labelHealth = $("<h6>").text(foodHits[from].recipe.healthLabels);
-                $(".health-label").append(labelHealth);
+                // var imagePic = $("<img>").attr("src", foodHits[from].recipe.image);
+                // $(".food-image").append(imagePic);
 
-                var labelDiet = $("<h6>").text(foodHits[from].recipe.dietLabels);
-                $(".diet-label").append(labelDiet)
+                // // calories and per serving
+                // var servings = foodHits[from].recipe.yield
+                // var calorieTotal = foodHits[from].recipe.calories;
+                // perServing = calorieTotal / servings;
 
-                var imagePic = $("<img>").attr("src", foodHits[from].recipe.image);
-                $(".food-image").append(imagePic);
+                // var calServing = $("<h6>").append(perServing);
+                // $(".serving-calories").append(calServing);
 
-                // calories and per serving
-                var servings = foodHits[from].recipe.yield
-                var calorieTotal = foodHits[from].recipe.calories;
-                perServing = calorieTotal / servings;
-
-                var calServing = $("<h6>").append(perServing);
-                $(".serving-calories").append(calServing);
-
-                var servingPerPerson = $("<h6>").append(servings);
-                $(".total-servings").append(servingPerPerson);
+                // var servingPerPerson = $("<h6>").append(servings);
+                // $(".total-servings").append(servingPerPerson);
 
 
 
 
-                // looping through the ingredients list and formatting into an unordered list
-                var listUL = $("<ul>");
-                for (var i = 0; i < ingredients.length; i++) {
-                    listUL.append($("<li>").text(ingredients[i]))
-                }
+                // // looping through the ingredients list and formatting into an unordered list
+                // var listUL = $("<ul>");
+                // for (var i = 0; i < ingredients.length; i++) {
+                //     listUL.append($("<li>").text(ingredients[i]))
+                // }
 
-                // link variable/object URL page with complete instructions - opens in new tab
-                var foodURL = foodHits[from].recipe.url;
-                var linkButton = $("<a>").attr({
-                    href: foodURL,
-                    target: "_blank"
-                })
-                linkButton.text("Click here for full recipe!");
-                $("link-button").append(linkButton, "<p>");
+                // // link variable/object URL page with complete instructions - opens in new tab
+                // var foodURL = foodHits[from].recipe.url;
+                // var linkButton = $("<a>").attr({
+                //     href: foodURL,
+                //     target: "_blank"
+                // })
+                // linkButton.text("Click here for full recipe!");
+                // $("link-button").append(linkButton, "<p>");
 
 
 
-                // variable div to append all the recipe variables with stored API object data
-                var recipeAll = $("<div>");
+                // // variable div to append all the recipe variables with stored API object data
+                // var recipeAll = $("<div>");
 
-                // all variables appended to Div variable above
-                recipeAll.append(recipeName); // Recipe title
-                recipeAll.append(listUL); // Ingredient list in list form
-                recipeAll.prepend(imagePic); // Image
-                recipeAll.append(labelHealth); // Health restrictions 
-                recipeAll.append(labelDiet); // Diet info - aka Low-carb
-                recipeAll.append(calServing); // Calories per serving
-                recipeAll.append(servingPerPerson); // Number of servings from the recipe
-                recipeAll.append(linkButton, "<p>"); // Link to full recipe
+                // // all variables appended to Div variable above
+                // recipeAll.append(recipeName); // Recipe title
+                // recipeAll.append(listUL); // Ingredient list in list form
+                // recipeAll.prepend(imagePic); // Image
+                // recipeAll.append(labelHealth); // Health restrictions 
+                // recipeAll.append(labelDiet); // Diet info - aka Low-carb
+                // recipeAll.append(calServing); // Calories per serving
+                // recipeAll.append(servingPerPerson); // Number of servings from the recipe
+                // recipeAll.append(linkButton, "<p>"); // Link to full recipe
 
 
                 // div located on chicken.html file for testing
-                $(".posted-food").append(recipeAll);
+                // $(".posted-food").append(recipeAll);
 
 
             }
@@ -107,42 +165,58 @@ function getFood(foodSearch) {
 
 
         // }
-    )
+    ).then(() => $('.posted-food').slick({
+        infinite: true,
+        nextArrow: $(".slick-next"),
+        prevArrow: $(".slick-prev"),
+    }));
 }
 
 
 // function for submit button
 $("#submit-class").on("click", function (e) {
-    event.preventDefault();
+    e.preventDefault();
     var q = $("#search").val();
     getFood(q);
-})
-
-$("#submit-class").on("click", function (e) {
-    event.preventDefault();
     $("#back-class").css("visibility", "visible");
     $("#next-class").css("visibility", "visible");
     $(".posted-food").empty();
+    // $('.posted-food').slick();
 })
 
-$("#next-class").on("click", function (e) {
-    var q = $("#search").val();
-    from++;
-    to++;
-    // from = from < 4 ? from++ : 0;
-    // console.log(from);
-    // to = to < 5 ? to++ : 1;
-    $(".posted-food").empty();
-    getFood(q);
-})
+// $("#next-class").on("click", function (e) {
+//     var q = $("#search").val();
+//     from++;
+//     to++;
+//     // from = from < 4 ? from++ : 0;
+//     // console.log(from);
+//     // to = to < 5 ? to++ : 1;
+//     $(".posted-food").empty();
+//     getFood(q);
+    
+// })
 
-$("#back-class").on("click", function (e) {
-    var q = $("#search").val();
-    from--;
-    to--;
-    // from = from < 4 ? from++ : 0;
-    // console.log(from);
-    // to = to < 5 ? to++ : 1;
-    $(".posted-food").empty();
-    getFood(q);
-})
+// $("#back-class").on("click", function (e) {
+//     var q = $("#search").val();
+//     from--;
+//     to--;
+//     // from = from < 4 ? from++ : 0;
+//     // console.log(from);
+//     // to = to < 5 ? to++ : 1;
+//     $(".posted-food").empty();
+//     getFood(q);
+    
+// });
+
+// $(document).ready(function(){
+//     $('.posted-food').slick();
+//  });
+
+// $(".button-test").on("click", function(){
+//     $('.posted-food').slick();
+// })
+ 
+
+
+
+
