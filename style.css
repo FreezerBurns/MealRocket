@@ -269,12 +269,14 @@ a.current {
 
 #submit-class {
 	background-color: #6CAD03;
-
+}
+#again-class {
+	background-color: #6CAD03;
 }
 
 .posted-food {
 background-color: rgba(255, 255, 255, 0.7);
-text-align: center;
+text-align: right;
 position: inherit;
 /* display: inline-block; */
 margin: 60px 30px 20px 60px; 
@@ -285,6 +287,9 @@ margin: 60px 30px 20px 60px;
 
 #posted-food {
 	width: 50vw;
+	text-align: center;
+	
+	
 }
 .recipe {
 	display: flex;

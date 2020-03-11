@@ -31,19 +31,19 @@ function getFood(foodSearch) {
             foodHits.map(itemRecipe => {
                  // variables for each attribute of the receipe
                  var recipeName = $("<h3>").text(itemRecipe.recipe.label);
-                 $(".recipe-name").append(recipeName);
+                //  $(".recipe-name").append(recipeName);
  
                  var ingredients = itemRecipe.recipe.ingredientLines;
-                 $(".ingredients-list").append(listUL);
+                //  $(".ingredients-list").append(listUL);
  
                  var labelHealth = $("<h6>").text(itemRecipe.recipe.healthLabels);
-                 $(".health-label").append(labelHealth);
+                //  $(".health-label").append(labelHealth);
  
                  var labelDiet = $("<h6>").text(itemRecipe.recipe.dietLabels);
-                 $(".diet-label").append(labelDiet)
+                //  $(".diet-label").append(labelDiet)
  
                  var imagePic = $("<img>").attr("src", itemRecipe.recipe.image);
-                 $(".food-image").append(imagePic);
+                //  $(".food-image").append(imagePic);
  
                  // calories and per serving
                  var servings = itemRecipe.recipe.yield
@@ -51,10 +51,10 @@ function getFood(foodSearch) {
                  perServing = calorieTotal / servings;
  
                  var calServing = $("<h6>").append(perServing);
-                 $(".serving-calories").append(calServing);
+                //  $(".serving-calories").append(calServing);
  
                  var servingPerPerson = $("<h6>").append(servings);
-                 $(".total-servings").append(servingPerPerson);
+                //  $(".total-servings").append(servingPerPerson);
  
  
  
@@ -169,6 +169,7 @@ function getFood(foodSearch) {
         infinite: true,
         nextArrow: $(".slick-next"),
         prevArrow: $(".slick-prev"),
+               
     }));
 }
 
@@ -181,8 +182,14 @@ $("#submit-class").on("click", function (e) {
     $("#back-class").css("visibility", "visible");
     $("#next-class").css("visibility", "visible");
     $(".posted-food").empty();
+    $("#search").attr('disabled', 'disabled');
+    $("#submit-class").attr('disabled', 'disabled');
     // $('.posted-food').slick();
 })
+
+$("#again-class").on("click", function (e) {
+    location.reload();
+});
 
 // $("#next-class").on("click", function (e) {
 //     var q = $("#search").val();
