@@ -45,18 +45,6 @@ function getFood(foodSearch) {
                  var imagePic = $("<img>").attr("src", itemRecipe.recipe.image);
                 //  $(".food-image").append(imagePic);
  
-                //  // calories and per serving
-                //  var servings = itemRecipe.recipe.yield
-                //  var calorieTotal = itemRecipe.recipe.calories;
-                //  perServing = calorieTotal / servings;
- 
-                //  var calServing = $("<h6>").append(perServing);
-                // //  $(".serving-calories").append(calServing);
- 
-                //  var servingPerPerson = $("<h6>").append(servings);
-                // //  $(".total-servings").append(servingPerPerson);
- 
- 
  
  
                  // looping through the ingredients list and formatting into an unordered list

@@ -301,6 +301,15 @@ margin: 60px 30px 20px 60px;
 	
 	
 }
+
+.posted-drink {
+	text-align: center;
+	
+}
+.posted-drink-image {
+	border-radius: 3px;
+}
+
 .recipe {
 	display: flex;
 	justify-content: center;
@@ -386,12 +395,14 @@ margin: 60px 30px 20px 60px;
   }
   
   .modal-window>div {
-	width: 400px;
+	width: 300px;
+	height: 300px;
 	position: relative;
 	margin: 10% auto;
 	padding: 2rem;
 	background: #fff;
 	color: #444;
+	border-radius: 5px;
   }
   
   .modal-window header {
@@ -414,7 +425,4 @@ margin: 60px 30px 20px 60px;
 	color: #000;
   }
   
-  .modal-window h1 {
-	font-size: 150%;
-	margin: 0 0 15px;
-  }
+ 
