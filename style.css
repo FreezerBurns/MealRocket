@@ -242,18 +242,9 @@ a.current {
 
 
 .input-field {
-  background-color:#60AD03;
-  height: 50px;
-}
-
-.label-icon {
-	background-image:src="images/searchicon.png";
-}
-.brand-logo {
-  height: 65px;
-  width: 300px;
-}
-
+	background-color:#60AD03;
+	height: 50px;
+  }
 /**************************MAKE MY MEAL PAGE CLASSES*/
 #form-food {
 
