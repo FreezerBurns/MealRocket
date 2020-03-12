@@ -38,3 +38,8 @@ var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
         
         
         })
+
+//         $("#cocktail-class").on("click", function (e) {
+//                 e.preventDefault();
+//                  $("#cocktail-class").attr('disabled', 'disabled');
+// });
