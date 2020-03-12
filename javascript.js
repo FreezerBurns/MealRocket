@@ -45,16 +45,16 @@ function getFood(foodSearch) {
                  var imagePic = $("<img>").attr("src", itemRecipe.recipe.image);
                 //  $(".food-image").append(imagePic);
  
-                 // calories and per serving
-                 var servings = itemRecipe.recipe.yield
-                 var calorieTotal = itemRecipe.recipe.calories;
-                 perServing = calorieTotal / servings;
+                //  // calories and per serving
+                //  var servings = itemRecipe.recipe.yield
+                //  var calorieTotal = itemRecipe.recipe.calories;
+                //  perServing = calorieTotal / servings;
  
-                 var calServing = $("<h6>").append(perServing);
-                //  $(".serving-calories").append(calServing);
+                //  var calServing = $("<h6>").append(perServing);
+                // //  $(".serving-calories").append(calServing);
  
-                 var servingPerPerson = $("<h6>").append(servings);
-                //  $(".total-servings").append(servingPerPerson);
+                //  var servingPerPerson = $("<h6>").append(servings);
+                // //  $(".total-servings").append(servingPerPerson);
  
  
  
@@ -85,8 +85,8 @@ function getFood(foodSearch) {
                  recipeAll.prepend(imagePic); // Image
                  recipeAll.append(labelHealth); // Health restrictions 
                  recipeAll.append(labelDiet); // Diet info - aka Low-carb
-                 recipeAll.append(calServing); // Calories per serving
-                 recipeAll.append(servingPerPerson); // Number of servings from the recipe
+                //  recipeAll.append(calServing); // Calories per serving
+                //  recipeAll.append(servingPerPerson); // Number of servings from the recipe
                  recipeAll.append(linkButton, "<p>"); // Link to full recipe
                  $(".posted-food").append(recipeAll);
                
