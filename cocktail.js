@@ -1,5 +1,5 @@
 
-
+function randomCocktail(){
 
 var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
         
@@ -39,7 +39,13 @@ var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
         
         })
 
+}
+
+$("#cocktail-class").on("click", function (e) {
+        $(".posted-drink").empty();
+        $(".posted-drink-image").empty();
+        randomCocktail();
 //         $("#cocktail-class").on("click", function (e) {
 //                 e.preventDefault();
 //                  $("#cocktail-class").attr('disabled', 'disabled');
-// });
+});

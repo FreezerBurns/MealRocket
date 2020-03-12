@@ -12,7 +12,7 @@
     <!-- Compiled and minified JavaScript -->
 
     <!-- Modal -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
 
     <!-- Slick Carousel Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha256-3h45mwconzsKjTUULjY+EoEkoRhXcOIU4l5YAw2tSOU=" crossorigin="anonymous" />
@@ -76,17 +76,19 @@
       <button class="btn waves-effect waves-light" id="again-class" type="submit" name="action">Search Again!<i class="material-icons right"></i>
        </button>
 
-       <button class="btn waves-effect waves-light" id="cocktail-class" enabled><a href="#ex1" rel="modal:open">Thirsty?</a><i class="material-icons right"></i>
+       <button class="btn waves-effect waves-light" id="cocktail-class" enabled><a href="#open-modal">Thirsty?</a><i class="material-icons right"></i>
 
        </button>
   
        <!-- Inside modal -->
-        <div id="ex1" class="modal">
-        <p>
-        <div class="posted-drink"></div>
-        <div class="posted-drink-image" id="posted-drink-image"></div>
-         
+       
+       <div id="open-modal" class="modal-window">
+       <div>
+         <a href="#modal-close" title="Close" class="modal-close">close &times;</a>
+         <div class="posted-drink"></div>
+         <div class="posted-drink-image" id="posted-drink-image"></div>
        </div>
+     </div>
 
        
 
@@ -112,22 +114,7 @@
   
 
 
-  <!-- <div>
-    <section class= "col14 fl">
-      <div class="col-med-3">
-
-      </div>
-    </section>
-    <section class= "col12 fl">
   
-     
-     </div>
-    </section>
-    <section class= "col14 fl">
-      <div class="col-med-3"></div>
-    </section>
-
-  </div> -->
 
 
 
@@ -138,7 +125,7 @@
 
 </footer> 
 <!--FOOTER ENDS HERE--> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js" integrity="sha256-zUQGihTEkA4nkrgfbbAM1f3pxvnWiznBND+TuJoUv3M=" crossorigin="anonymous"></script>
 <script src="./cocktail.js"></script>
 <script src="./javascript.js"></script>
