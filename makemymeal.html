@@ -59,26 +59,28 @@
   <div class="col s12 m4 l2">&nbsp;</div>
   <div class="col s12 m4 l8"> 
     <div class="nav-wrapper">
-      <form>
+      <form name="searchform" onsubmit="return validateForm()" method="post" required>
         <br><br><br><br>
         <!-- <p class="word"><strong>Browse recipes by ingredients like chicken, beef and chocolate, and search for seasonal favorites like asparagus, pumpkin, strawberries, tomatoes and more.</strong></p> -->
-        <div class="input-field">
-          <input id="search" type="search" onsubmit="return validateForm()" placeholder="Browse recipes by ingredients like chicken or beef and seasonal favorites like asparagus or pumpkin!" required enabled>  
+        <div class="input-field" name="inputfield" required>
+          <input id="search" name="inputname" type="search" placeholder="Browse recipes by ingredients like chicken or beef and seasonal favorites like asparagus or pumpkin!" required enabled>  
           <label class="label-icon" for="search"><i class="material-icons"></i></label>
           <i class="material-icons"></i>
         </div>
-      </form>
+      
     </div>
 
     <button class="btn waves-effect waves-light" id="submit-class" type="submit" name="action" enabled>You Hungry? Lets Cook!<i class="material-icons right"></i>
       </button>
+    </form>
       <button class="btn waves-effect waves-light" id="again-class" type="submit" name="action">Search Again!<i class="material-icons right"></i>
        </button>
 
-       <button class="btn waves-effect waves-light" id="cocktail-class"><a href="#ex1" rel="modal:open">Thirsty?</a><i class="material-icons right"></i>
+       <button class="btn waves-effect waves-light" id="cocktail-class" enabled><a href="#ex1" rel="modal:open">Thirsty?</a><i class="material-icons right"></i>
 
        </button>
   
+       <!-- Inside modal -->
         <div id="ex1" class="modal">
         <p>
         <div class="posted-drink"></div>
