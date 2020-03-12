@@ -118,6 +118,19 @@ $("#again-class").on("click", function (e) {
 });
 
 
+$(document).ready(function(){
+    $("#submit-class").attr("disabled", "true");
+    $(".submit-recipe").on("input", function(){
+        console.log("Josh");
+        if ($(this).val() != "") {
+            $("#submit-class").removeAttr("disabled");
+        } else {
+            $("#submit-class").attr("disabled", "true");        
+        }
+    });    
+});
+
+
 
 
 
