@@ -15,8 +15,9 @@ var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
                 var drinkName = $("<h4>").text(response.drinks[0].strDrink);
                 // console.log(drinkName)
 
-                var drinkImage = $("<img>").attr("src", response.drinks[0].strDrinkThumb);
+                var drinkImage = $("<img width='150px' height='150px'>").attr("src", response.drinks[0].strDrinkThumb);
                 // console.log(drinkImage)
+                
 
         
 
@@ -41,11 +42,10 @@ var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
 }
 
+// function to run cocktail generator
 $("#cocktail-class").on("click", function (e) {
         $(".posted-drink").empty();
         $(".posted-drink-image").empty();
         randomCocktail();
-//         $("#cocktail-class").on("click", function (e) {
-//                 e.preventDefault();
-//                  $("#cocktail-class").attr('disabled', 'disabled');
+
 });
