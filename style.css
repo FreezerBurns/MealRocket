@@ -427,5 +427,39 @@ margin: 60px 30px 20px 60px;
   .modal-close:hover {
 	color: #000;
   }
-  
+  .textHome {
+    font-size: 16px;
+}
+.contact-heading {
+    color:rgba(116,116,116,1.00);
+    font-weight: 100;
+    text-shadow: #FFF;
+    text-align: center;
+}
+.heading2 {
+    color:rgba(116,116,116,1.00);
+    font-size: 25px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.aboutpage {
+    background-color: #FFF;
+    opacity: 0.8;
+    padding:20px;
+}
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+.aboutimg {
+    box-shadow: #807C99;
+}
  
+container {
+    width:960px;
+    margin:0 auto;
+    padding-top:10px;
+}
